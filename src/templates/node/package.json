@@ -1,0 +1,62 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "description",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npm run model && cross-env NODE_ENV=development nodemon --inspect app.js",
+    "prod": "cross-env NODE_ENV=production pm2 start pm2.conf.json",
+    "model": "sequelize-auto -h localhost -d mercurius -u root -x password -p 3306 --dialect mysql -l es5 -o './src/models/tableModel'"
+  },
+  "author": "duqingyu",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "@alicloud/pop-core": "^1.7.10",
+    "D": "^1.0.0",
+    "ali-oss": "^6.10.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chalk": "^4.1.0",
+    "cls-hooked": "^4.2.2",
+    "dayjs": "^1.8.36",
+    "got": "^11.5.2",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-router": "^9.1.0",
+    "lodash": "^4.17.20",
+    "md5": "^2.3.0",
+    "module-alias": "^2.2.2",
+    "mysql2": "^2.1.0",
+    "node-require-context": "^1.0.0",
+    "node-schedule": "^1.3.2",
+    "node-xlsx": "^0.16.1",
+    "redis": "^3.1.2",
+    "nodemon": "^2.0.12",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "sequelize": "^5.21.12",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "cross-env": "^7.0.2",
+    "husky": "^1.1.2",
+    "joi": "^17.2.1",
+    "p-limit": "^3.1.0",
+    "sequelize-auto": "^0.5.4"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@": "src"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

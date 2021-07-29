@@ -1,0 +1,18 @@
+{
+  "apps": {
+    "name": "product-koa-server",
+    "script": "app.js",
+    "watch": true,
+    "max_memory_restart": "1024M",
+    "ignore_watch": [
+      "node_modules",
+      "logs",
+      "src/models/tableModel",
+      "src/public"
+    ],
+    "instances": 2,
+    "error_file": "logs/err.log",
+    "out_file": "logs/out.log",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss"
+  }
+}
